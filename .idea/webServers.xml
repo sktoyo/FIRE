@@ -3,7 +3,14 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="1621403c-1139-4d44-bbe0-578f998306f0" name="heart3 tf practice">
-        <fileTransfer rootFolder="/data/home/shjung" accessType="SFTP" host="143.248.31.96" port="22" sshConfigId="3855e800-8067-4d35-99ee-142bb798ded5" sshConfig="shjung@143.248.31.96:22 password">
+        <fileTransfer rootFolder="/data/home/shjung" accessType="SFTP" sshConfigId="3855e800-8067-4d35-99ee-142bb798ded5" sshConfig="shjung@143.248.31.96:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="b8ec8f34-c1f5-4611-a73f-014af3a97525" name="heart3 tf docker">
+        <fileTransfer rootFolder="/root" accessType="SFTP" host="143.248.31.96" port="7002" sshConfigId="5081ae93-05da-4329-8e45-1a67be943e8d" sshConfig="root@143.248.31.96:7002">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="heart3 tf practice" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="root@143.248.31.96:7002" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false">
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
-      <paths name="heart3">
+      <paths name="heart3 tf docker">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="heart3 docker">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/FIRE" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -24,10 +17,24 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="tf practice">
+      <paths name="root@143.248.31.96:7001 password">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/pycharm_project_708" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@143.248.31.96:7001 password (1)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@143.248.31.96:7002">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/FIRE" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>

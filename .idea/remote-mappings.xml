@@ -3,14 +3,14 @@
   <component name="RemoteMappingsManager">
     <list>
       <list>
-        <remote-mappings server-id="python@docker://tensorflow/tensorflow:latest-gpu/python">
+        <remote-mappings server-id="python@docker://tensorflow/tensorflow:latest-gpu//usr/local/bin/python">
           <settings>
             <list>
-              <mapping local-root="$PROJECT_DIR$" remote-root="/FIRE" />
+              <mapping local-root="$PROJECT_DIR$" remote-root="/opt/project" />
             </list>
           </settings>
         </remote-mappings>
-        <remote-mappings server-id="python@docker://tensorflow/tensorflow:latest-gpu//usr/local/bin/python">
+        <remote-mappings server-id="python@docker://tensorflow/tensorflow:latest-gpu/python">
           <settings>
             <list>
               <mapping local-root="$PROJECT_DIR$" remote-root="/opt/project" />
