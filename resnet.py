@@ -12,13 +12,15 @@ from tensorflow.keras.utils import plot_model
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.datasets import cifar10
 
+print('test')
+
 import numpy as np
 import os
 import math
 
 # training parameters
 batch_size = 32
-epochs = 200
+epochs = 2
 data_augmentation = True
 num_classes = 10
 

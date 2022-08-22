@@ -1,3 +1,6 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"]="1"
+
 import numpy as np
 from tensorflow.keras.layers import Dense, Dropout, Input
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten
@@ -5,25 +8,36 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
 
-def create_dataset(size):
-
-    protein_1 = np.random.rand(size, 28, 28) + 10
-
-    protein_2 = np.random.rand(size, 28, 28) + 30
-
-    x = concat_dataset(protein_1, protein_2, 0)
-    y = concat_dataset(np.ones(size), np.zeros(size), 0)
-    return x, y
-
 def concat_dataset(data1, data2, axis):
     return np.concatenate((data1, data2), axis=axis)
 
+def create_dataset(size):
+
+    protein_1 = np.random.rand(size, 28, 28, 1) + 10
+    protein_2 = np.random.rand(size, 28, 28, 1) + 20
+
+    p1_p2 = concat_dataset(protein_1, protein_2, 3)
+    p2_p1 = concat_dataset(protein_2, protein_1, 3)
+    pos = concat_dataset(p1_p2, p2_p1, 0)
+
+    protein_3 = np.random.rand(size, 28, 28, 1) + 30
+    protein_4 = np.random.rand(size, 28, 28, 1) + 40
+
+    p3_p4 = concat_dataset(protein_3, protein_4, 3)
+    p4_p3 = concat_dataset(protein_4, protein_3, 3)
+    neg = concat_dataset(p3_p4, p4_p3, 0)
+
+    x = concat_dataset(pos, neg, 0)
+    y = concat_dataset(np.ones(size*2), np.zeros(size*2), 0)
+    return x, y
+
+
 # load MNIST dataset
-# (x_train, y_train), (x_test, y_test) = mnist.load_data()
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
 
 # Random test data
-x_train, y_train = create_dataset(30000)
-x_test, y_test = create_dataset(3000)
+# x_train, y_train = create_dataset(30000)
+# x_test, y_test = create_dataset(3000)
 
 # from sparse label to categorical
 num_labels = len(np.unique(y_train))
@@ -72,7 +86,7 @@ model.compile(loss='categorical_crossentropy',
 model.fit(x_train,
           y_train,
           validation_data=(x_test, y_test),
-          epochs=20,
+          epochs=5,
           batch_size=batch_size)
 
 # model accuracy on test dataset
